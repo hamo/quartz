@@ -25,7 +25,7 @@ func jobAlreadyExistsError(job JobDetail) error {
 
 func triggerAlreadyExistsError(trigger Trigger) error {
 	return fmt.Errorf("Unable to store Trigger with name: '%s' and group: '%s', "+
-		"because one already exists with this identification.", trigger.Key().Name, trigger.Key().Group)
+		"because one already exists with this identification.", trigger.Key().Name(), trigger.Key().Group())
 }
 
 func jobPersistenceError(key JobKey) error {
